@@ -10,26 +10,25 @@ my city's (Pouso Alegre, MG) location. And then, I calculate a distance between 
 
 For that, I used some functions and APIs, such as:
 
-### navigator.geolocation with error handling
-'''
-   if (navigator.geolocation) {
-	   	navigator.geolocation.getCurrentPosition(displayLocation, displayError);
+- navigator.geolocation
+
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(displayLocation, displayError);
 	} else {
 		alert("Oops, no geolocation support.");
 	}
-'''
-'''
-   function displayError(error) {
+	
+- Error handling
+
+   	function displayError(error) {
 	   var errorTypes = {
 	 	   0: "Unknown error",
 	 	   1: "Permission denied by user",
 	 	   2: "Position is not avaliable",
 	 	   3: "Request timed out"
 	   };
-	   var errorMessage = errorTypes[error.code];
-	   
+	   var errorMessage = errorTypes[error.code];	   
 	   if (error.code == 0 || error.code == 2){
 	   	errorMessage += " " + error.message;
 	   }
-   }
-'''
+   	}
